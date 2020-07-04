@@ -11,35 +11,18 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import pub.fii.factory.FiiFactory;
 import pub.fii.model.Fii;
 
 public class JsonGenerator {
-	private final String URL = "https://fiis.com.br/lista-de-fundos-imobiliarios/";
-	private final String ELEMENT_CLASS = "item";
-	private final String TAG = "span";
+	private List<Fii> fiiList = FiiFactory.getFiiList();
 	
-	private Map<String,String> getList(){
-		Map<String,String> codeList = new TreeMap<String, String>();
-		try {
-			Document listOfFii 	= Jsoup.connect(URL).get();
-			Elements elements 	= listOfFii.getElementsByClass(ELEMENT_CLASS);
-			for(Element element:elements) {
-				Elements e = element.getElementsByTag(TAG);
-				codeList.put(e.get(0).text(), e.get(1).text());
-			}
-			
-		}catch(IOException e) {
-			e.printStackTrace();
+	public List<String> jsonBuilder() {
+		List<String> jsons = new ArrayList();
+		for(Fii fii: fiiList) {
+			String aux = "FiiName:"+fii.getFiiNome()+"FiiCode:"+fii.getFiiCode();
 		}
-		return codeList;
-	}
-	
-	@SuppressWarnings("unused")
-	private List<Fii> createFiiObject() {
-		List<Fii> fiis = new ArrayList<Fii>();
-		for(Map.Entry<String, String> generated : getList().entrySet()) {
-			fiis.add(new Fii(generated.getKey(),generated.getValue()));
-		}
-		return fiis;
+		
+		return null;
 	}
 }
