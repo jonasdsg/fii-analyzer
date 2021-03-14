@@ -15,13 +15,14 @@
 			<artifactId>scrapfii-domain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+<!-- 
 		<dependency>
 			<groupId>br.com.scrapfii.scrapfii-application</groupId>
 			<artifactId>scrapfii-application</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
+ -->
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
