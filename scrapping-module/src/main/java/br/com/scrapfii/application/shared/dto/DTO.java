@@ -1,16 +1,15 @@
 package br.com.scrapfii.application.shared.dto;
 
-public abstract class DTO <Model>{
+public abstract class DTO<ModelClass> implements DtoMapper<ModelClass>{
 	
-	private Integer id;
+	private Long id;
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	
-	public abstract Model toModel(); 
+	 
 }
