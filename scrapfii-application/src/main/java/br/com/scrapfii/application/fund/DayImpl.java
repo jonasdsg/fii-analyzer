@@ -37,4 +37,11 @@ public class DayImpl extends Day implements DefaultModelMethods<DayDTO>{
 		return dto;
 	}
 
+	@Override
+	protected void validate(Integer dayNumber, BigDecimal min, BigDecimal max, BigDecimal average, BigDecimal first,
+			BigDecimal last) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

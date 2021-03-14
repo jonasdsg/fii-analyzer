@@ -3,9 +3,11 @@ package br.com.scrapfii.application.fund;
 import br.com.scrapfii.domain.fund.CNPJ;
 
 public class CnpjImpl extends CNPJ implements DefaultModelMethods<String>{
+	private Long id;
 
-	public CnpjImpl(String cnpj) {
+	public CnpjImpl(Long id,String cnpj) {
 		super(cnpj);
+		this.id = id;
 	}
 
 	@Override
@@ -16,14 +18,12 @@ public class CnpjImpl extends CNPJ implements DefaultModelMethods<String>{
 
 	@Override
 	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.id;
 	}
 
 	@Override
 	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		
+		this.id = id;
 	}
 
 	@Override
