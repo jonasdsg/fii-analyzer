@@ -9,8 +9,8 @@
 
 	<dependencies>
 		<dependency>
-			<artifactId>scrapping-module</artifactId>
-			<groupId>br.com.scrapfii.scrapping-module</groupId>
+			<artifactId>scrapfii-services</artifactId>
+			<groupId>br.com.scrapfii.scrapfii-services</groupId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
