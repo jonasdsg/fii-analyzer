@@ -1,6 +1,6 @@
 package br.com.scrapfii.application.shared.dto;
 
-import br.com.scrapfii.application.fund.ContactImpl;
+import br.com.scrapfii.application.fund.builders.ContactBuilder;
 import br.com.scrapfii.domain.fund.Contact;
 
 public class ContactDTO extends DTO<Contact> {
@@ -12,7 +12,15 @@ public class ContactDTO extends DTO<Contact> {
 	
 	@Override
 	public Contact toModel() {
-		return new ContactImpl(director, phone, address, bookKeeper);
+		return ContactBuilder.builder()
+				.withId(this.getId())
+				.withDirector(director)
+				.withPhone(phone)
+				.withAddress(address)
+				.withBookKeeper(bookKeeper)
+				.build();
 	}
+	
+	
 	
 }
