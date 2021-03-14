@@ -12,6 +12,8 @@ public abstract class Day {
 	
 	public Day(Integer dayNumber, BigDecimal min, BigDecimal max, BigDecimal average, BigDecimal first,
 			BigDecimal last) {
+		this.validate(dayNumber, min, max, average, first, last);
+		
 		this.dayNumber = dayNumber;
 		this.min = min;
 		this.max = max;
@@ -20,4 +22,6 @@ public abstract class Day {
 		this.last = last;
 	}
 	
+	protected abstract void validate(Integer dayNumber, BigDecimal min, BigDecimal max, BigDecimal average, BigDecimal first,
+			BigDecimal last);
 }

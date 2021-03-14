@@ -8,6 +8,13 @@ public abstract class About {
 	protected String name;
 	protected String site;
 	protected List<String> negociationCodes;
+
+	public About(CNPJ cnpj, String name, String site, List<String> negociationCodes) {
+		this.cnpj = cnpj;
+		this.name = name;
+		this.site = site;
+		this.negociationCodes = negociationCodes;
+	}
 	
 	
 }
