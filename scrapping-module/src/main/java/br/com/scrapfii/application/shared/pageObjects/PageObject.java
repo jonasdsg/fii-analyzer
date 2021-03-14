@@ -1,4 +1,4 @@
-package br.com.scrapfii.shared.pageObjects;
+package br.com.scrapfii.application.shared.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 

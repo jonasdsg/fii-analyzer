@@ -1,4 +1,4 @@
-package br.com.scrapfii.shared.pageObjects;
+package br.com.scrapfii.application.shared.pageObjects;
 import static org.openqa.selenium.By.tagName;
 import static org.openqa.selenium.By.xpath;
 

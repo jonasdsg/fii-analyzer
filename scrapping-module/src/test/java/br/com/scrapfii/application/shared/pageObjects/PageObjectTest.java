@@ -1,4 +1,4 @@
-package br.com.scrapfii.shared.pageObjects;
+package br.com.scrapfii.application.shared.pageObjects;
 
 import static java.util.Objects.isNull;
 

@@ -1,4 +1,4 @@
-package br.com.scrapfii.shared.pageObjects;
+package br.com.scrapfii.application.shared.pageObjects;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import br.com.scrapfii.application.configuration.ChromeDriverConfiguration;
+import br.com.scrapfii.application.shared.pageObjects.PageFiisListados;
+import br.com.scrapfii.application.shared.pageObjects.PageFundDetail;
 
 public class PageFundDetailTest extends PageObjectTest {
 	private static PageFundDetail fundDetail;
