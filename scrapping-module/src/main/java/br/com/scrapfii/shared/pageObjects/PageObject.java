@@ -2,12 +2,12 @@ package br.com.scrapfii.shared.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import br.com.scrapfii.application.configuration.DefaultConfigurationDriver;
+import br.com.scrapfii.application.configuration.DefaultWebDriverConfiguration;
 
 public abstract class PageObject {
-	private DefaultConfigurationDriver configs;
+	private DefaultWebDriverConfiguration configs;
 	
-	public PageObject(DefaultConfigurationDriver configs) {
+	public PageObject(DefaultWebDriverConfiguration configs) {
 		this.configs = configs;
 	}
 	
@@ -17,12 +17,19 @@ public abstract class PageObject {
 	
 	public abstract void goToMainPage();
 	
-	protected DefaultConfigurationDriver getConfigs() {
+	protected DefaultWebDriverConfiguration getConfigs() {
 		return this.configs;
 	}
 	
 	public void close() {
 		this.configs.getDriver().close();
+	}
+	
+	protected void sleep(Integer seconds) {
+		try { Thread.sleep(seconds*1000); }
+		catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 
