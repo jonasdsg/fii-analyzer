@@ -1,4 +1,4 @@
-package br.com.scrapfii.application.fund.builders;
+package br.com.scrapfii.application.builders.fund;
 
 import br.com.scrapfii.application.fund.ContactImpl;
 

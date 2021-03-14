@@ -1,4 +1,4 @@
-package br.com.scrapfii.application.fund.builders;
+package br.com.scrapfii.application.builders.fund;
 
 import java.math.BigDecimal;
 
