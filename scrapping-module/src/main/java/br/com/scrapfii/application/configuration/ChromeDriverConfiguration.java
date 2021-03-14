@@ -3,7 +3,7 @@ package br.com.scrapfii.application.configuration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ChromeDriverConfiguration implements DefaultConfigurationDriver {
+public class ChromeDriverConfiguration implements DefaultWebDriverConfiguration {
 	private WebDriver driver;
 	
 	public ChromeDriverConfiguration() {
