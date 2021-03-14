@@ -13,9 +13,22 @@
 			<groupId>br.com.scrapfii.scrapping-module</groupId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
+		<dependency>
+			<groupId>br.com.scrapfii.scrapfii-shared</groupId>
+			<artifactId>scrapfii-shared</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.scrapfii.scrapfii-domain</groupId>
+			<artifactId>scrapfii-domain</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
-	
-	
+
+
 	<build>
 		<plugins>
 			<plugin>
@@ -29,6 +42,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	
+
+
 </project>

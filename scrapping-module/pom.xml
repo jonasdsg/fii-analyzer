@@ -11,18 +11,10 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>br.com.scrapfii.domain</groupId>
-			<artifactId>scrapfii-domain</artifactId>
+			<groupId>br.com.scrapfii.scrapfii-shared</groupId>
+			<artifactId>scrapfii-shared</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-<!-- 
-		<dependency>
-			<groupId>br.com.scrapfii.scrapfii-application</groupId>
-			<artifactId>scrapfii-application</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
- -->
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
