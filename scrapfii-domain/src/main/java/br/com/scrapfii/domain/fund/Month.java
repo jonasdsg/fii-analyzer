@@ -1,27 +1,43 @@
 package br.com.scrapfii.domain.fund;
 
+import static java.util.Collections.unmodifiableList;
+import static javax.persistence.EnumType.STRING;
+
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Month {
-	protected Integer monthNumber;
-	protected Integer year;
-	protected List<Day> days;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
+
+@Entity
+public abstract class Month implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@ManyToOne
+	private List<Day> days;
 	
+	@Enumerated(STRING)
+	private EnumMonth month;
 	
-	public Month(Integer monthNumber, Integer year) {
-		this.monthNumber = monthNumber;
-		this.year = year;
+	public Month(EnumMonth month) {
+		this.validateMonth(month);
+		this.month = month;
 	}
 
-	public void addDay(Day day) {
-		this.validateMonth(monthNumber, days, year);
-		this.days.add(day);
+
+	public String getMonth() {
+		return month.name();
 	}
 
-	protected abstract void validateMonth(Integer monthNumber, List<Day> days, Integer year);
-
-	public Day getDay(Integer day) {
-		return this.days.get(day);
+	public void addDays(List<Day> days) {
+		this.days = days;
 	}
+	
+	public List<Day> getDays() {
+		return unmodifiableList(days);
+	}
+	
+	protected abstract void validateMonth(EnumMonth month);
 	
 }

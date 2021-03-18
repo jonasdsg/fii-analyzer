@@ -1,17 +1,35 @@
 package br.com.scrapfii.domain.fund;
 
-public class Fund {
-	
-	protected CNPJ cnpj; 
-	protected About data;
-	protected Contact contact;
-	protected PriceHistory fundPricesHistory;
+import java.io.Serializable;
 
-	public Fund(CNPJ cnpj, About data, Contact contact, PriceHistory fundPricesHistory) {
-		this.cnpj = cnpj;
-		this.data = data;
+import javax.persistence.Entity;
+
+@Entity
+public abstract class Fund implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	private About about;
+	private Contact contact;
+	private History history;
+	
+	public About getAbout() {
+		return about;
+	}
+	
+	public void changeInfoAbout(About about) {
+		this.about = about;
+	}
+	public Contact getContact() {
+		return contact;
+	}
+	public void setContact(Contact contact) {
 		this.contact = contact;
-		this.fundPricesHistory = fundPricesHistory;
+	}
+	public History getHistory() {
+		return history;
+	}
+	public void addYear(Year year) {
+		this.history.addYear(year);
 	}
 	
 	

@@ -1,6 +1,12 @@
 package br.com.scrapfii.domain.fund;
 
-public abstract class Contact {
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+@Entity
+public abstract class Contact implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	protected String director;
 	protected String phone;
 	protected String address;

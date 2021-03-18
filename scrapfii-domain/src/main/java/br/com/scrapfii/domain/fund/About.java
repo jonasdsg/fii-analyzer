@@ -1,20 +1,42 @@
 package br.com.scrapfii.domain.fund;
 
-import java.util.List;
+import java.io.Serializable;
 
-public abstract class About {
+import javax.persistence.Entity;
 
-	protected CNPJ cnpj;
-	protected String name;
-	protected String site;
-	protected List<String> negociationCodes;
-
-	public About(CNPJ cnpj, String name, String site, List<String> negociationCodes) {
-		this.cnpj = cnpj;
-		this.name = name;
-		this.site = site;
-		this.negociationCodes = negociationCodes;
-	}
+@Entity
+public abstract class About implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
+	private CNPJ cnpj;
+	private String name;
+	private String site;
+	private String negociationCode;
+	
+	public CNPJ getCnpj() {
+		return cnpj;
+	}
+	public void setCnpj(CNPJ cnpj) {
+		this.cnpj = cnpj;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSite() {
+		return site;
+	}
+	public void setSite(String site) {
+		this.site = site;
+	}
+	public String getNegociationCode() {
+		return negociationCode;
+	}
+	public void setNegociationCode(String negociationCode) {
+		this.negociationCode = negociationCode;
+	}
+
 	
 }
