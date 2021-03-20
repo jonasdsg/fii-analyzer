@@ -1,18 +1,17 @@
 package br.com.scrapfii.application.builders.fund;
 
-import br.com.scrapfii.application.fund.AboutEntity;
-import br.com.scrapfii.application.fund.CnpjEntity;
 import br.com.scrapfii.domain.fund.About;
+import br.com.scrapfii.domain.fund.CNPJ;
 
 public class AboutBuilder {
-	private About about = new AboutEntity();
+	private About about = new About();
 
 	public static AboutBuilder builder() {
 		return new AboutBuilder();
 	}
 
 	public AboutBuilder withCnpj(String cnpj) {
-		about.setCnpj(new CnpjEntity(cnpj));
+		about.setCnpj(new CNPJ(cnpj));
 		return this;
 	}
 

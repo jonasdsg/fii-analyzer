@@ -2,39 +2,44 @@ package br.com.scrapfii.application.builders.fund;
 
 import java.math.BigDecimal;
 
-import br.com.scrapfii.application.fund.DayEntity;
 import br.com.scrapfii.domain.fund.Day;
 
 public class DayBuilder {
 
-	private Day day = new DayEntity();
+	private Day day = new Day();
 
 	public static DayBuilder builder() {
 		return new DayBuilder();
 	}
 
-	public void withFirst(String first) {
+	public DayBuilder withFirst(String first) {
 		day.setFirst(new BigDecimal(first));
+		return this;
 	}
 
-	public void withLast(String last) {
+	public DayBuilder withLast(String last) {
 		day.setLast(new BigDecimal(last));
+		return this;
 	}
 
-	public void withAverage(String average) {
+	public DayBuilder withAverage(String average) {
 		day.setAverage(new BigDecimal(average));
+		return this;
 	}
 
-	public void with(Integer dayNumber) {
+	public DayBuilder withDayNumber(Integer dayNumber) {
 		day.setDayNumber(dayNumber);
+		return this;
 	}
 
-	public void withMin(String min) {
+	public DayBuilder withMin(String min) {
 		day.setMin(new BigDecimal(min));
+		return this;
 	}
 
-	public void withMax(String max) {
+	public DayBuilder withMax(String max) {
 		day.setMax(new BigDecimal(max));
+		return this;
 	}
 
 	public Day build() {

@@ -1,10 +1,9 @@
 package br.com.scrapfii.application.builders.fund;
 
-import br.com.scrapfii.application.fund.ContactEntity;
 import br.com.scrapfii.domain.fund.Contact;
 
 public class ContactBuilder {
-	private Contact	 contact = new ContactEntity();
+	private Contact	 contact = new Contact();
 
 	public static ContactBuilder builder() {
 		return new ContactBuilder();
@@ -22,12 +21,12 @@ public class ContactBuilder {
 
 	public ContactBuilder withAddress(String address) {
 		contact.setAddress(address);
-		return null;
+		return this;
 	}
 
 	public ContactBuilder withBookKeeper(String bookKeeper) {
 		contact.setBookKeeper(bookKeeper);
-		return null;
+		return this;
 	}
 
 	public Contact build() {
