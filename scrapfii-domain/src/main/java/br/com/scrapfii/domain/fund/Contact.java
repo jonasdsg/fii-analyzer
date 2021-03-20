@@ -17,7 +17,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 
 @Entity
-public abstract class Contact implements Serializable {
+public class Contact implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = SEQUENCE)
@@ -27,5 +27,6 @@ public abstract class Contact implements Serializable {
 	private String phone;
 	private String address;
 	private String bookKeeper;
+	
 	
 }

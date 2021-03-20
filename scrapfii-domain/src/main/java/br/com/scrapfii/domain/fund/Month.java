@@ -45,4 +45,12 @@ public class Month implements Serializable {
 	public EnumMonth next() {
 		return this.month;
 	}
+	
+	public Integer getTotalDays() {
+		return this.month.totalDays();
+	}
+	
+	public void leapYear() {
+		this.month.setLeap();
+	}
 }

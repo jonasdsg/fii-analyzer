@@ -4,6 +4,7 @@ import static java.util.Collections.unmodifiableList;
 import static javax.persistence.GenerationType.SEQUENCE;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -27,6 +28,7 @@ public class Year implements Serializable {
 	
 	public Year(Integer yearNumber) {
 		nextMonth = EnumMonth.JANUARY;
+		months = new ArrayList<Month>();
  		this.yearNumber = yearNumber;
 	}
 
