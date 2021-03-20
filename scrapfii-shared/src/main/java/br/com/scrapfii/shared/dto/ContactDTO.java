@@ -1,4 +1,4 @@
-package br.com.scrapfii.application.shared.dto;
+package br.com.scrapfii.shared.dto;
 
 public class ContactDTO extends DTO {
 
