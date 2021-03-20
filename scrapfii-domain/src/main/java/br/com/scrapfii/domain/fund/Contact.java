@@ -1,6 +1,6 @@
 package br.com.scrapfii.domain.fund;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
 
@@ -20,13 +20,13 @@ import lombok.Setter;
 public class Contact implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = SEQUENCE)
+	@GeneratedValue(strategy = IDENTITY)
 	private Long id;
 	
 	private String director;
 	private String phone;
 	private String address;
 	private String bookKeeper;
-	
+	public Contact() {	}
 	
 }

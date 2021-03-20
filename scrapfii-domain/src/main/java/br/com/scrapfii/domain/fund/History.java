@@ -1,8 +1,9 @@
 package br.com.scrapfii.domain.fund;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -22,10 +23,18 @@ import lombok.Setter;
 public class History implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = SEQUENCE)
+	@GeneratedValue(strategy = IDENTITY)
 	private Long id;
+	private String description;
 	
 	@OneToMany
 	private List<Year> years;
-	
+	public History() {}
+	public History(String description) {
+		this.description = description;
+		years = new ArrayList<Year>();
+	}
+	public void addYear(Year year) {
+		this.years.add(year);
+	}
 }

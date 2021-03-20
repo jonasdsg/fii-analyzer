@@ -2,7 +2,7 @@ package br.com.scrapfii.domain.fund;
 
 import static java.util.Collections.unmodifiableList;
 import static javax.persistence.EnumType.STRING;
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
 import java.util.List;
@@ -25,7 +25,7 @@ import lombok.Setter;
 public class Month implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = SEQUENCE)
+	@GeneratedValue(strategy = IDENTITY)
 	private Long id;
 	
 	@OneToMany
@@ -33,6 +33,8 @@ public class Month implements Serializable {
 	
 	@Enumerated(STRING)
 	private EnumMonth month;
+	
+	public Month() {}
 	
 	public Month(EnumMonth month) {
 		this.month = month;

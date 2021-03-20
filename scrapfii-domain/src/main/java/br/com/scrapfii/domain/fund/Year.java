@@ -1,7 +1,7 @@
 package br.com.scrapfii.domain.fund;
 
 import static java.util.Collections.unmodifiableList;
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,12 +19,14 @@ public class Year implements Serializable {
 	private static EnumMonth nextMonth;
 	
 	@Id
-	@GeneratedValue(strategy = SEQUENCE)
+	@GeneratedValue(strategy = IDENTITY)
 	private Long id;
 
 	private Integer yearNumber;
 	@OneToMany
 	private List<Month> months;
+	
+	public Year() {	}
 	
 	public Year(Integer yearNumber) {
 		nextMonth = EnumMonth.JANUARY;

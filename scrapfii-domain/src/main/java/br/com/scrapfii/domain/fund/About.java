@@ -1,6 +1,6 @@
 package br.com.scrapfii.domain.fund;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
 
@@ -20,12 +20,16 @@ import lombok.Setter;
 public class About implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = SEQUENCE)
+	@GeneratedValue(strategy = IDENTITY)
 	private Long id;
-
-	private CNPJ cnpj;
+	private String cnpj;
 	private String name;
 	private String site;
 	private String negociationCode;
 	
+	public About() {}
+	
+	public void setCnpj(CNPJ cnpj) {
+		this.cnpj = cnpj.getCPNJ();
+	}
 }

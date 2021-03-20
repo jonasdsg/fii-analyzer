@@ -1,6 +1,6 @@
 package br.com.scrapfii.domain.fund;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -21,7 +21,7 @@ import lombok.Setter;
 public class Day implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = SEQUENCE)
+	@GeneratedValue(strategy = IDENTITY)
 	private Long id;
 	
 	private Integer dayNumber;
@@ -30,5 +30,5 @@ public class Day implements Serializable {
 	private BigDecimal average;
 	private BigDecimal first;
 	private BigDecimal last;	
-	
+	public Day() {}
 }
