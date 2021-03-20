@@ -1,56 +1,34 @@
 package br.com.scrapfii.domain.fund;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+
 @Entity
-public abstract class Day implements Serializable {
+public class Day implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = SEQUENCE)
+	private Long id;
 	
 	private Integer dayNumber;
 	private BigDecimal min;
 	private BigDecimal max;
 	private BigDecimal average;
 	private BigDecimal first;
-	private BigDecimal last;
-	
-	public Integer getDayNumber() {
-		return dayNumber;
-	}
-	public void setDayNumber(Integer dayNumber) {
-		this.dayNumber = dayNumber;
-	}
-	public BigDecimal getMin() {
-		return min;
-	}
-	public void setMin(BigDecimal min) {
-		this.min = min;
-	}
-	public BigDecimal getMax() {
-		return max;
-	}
-	public void setMax(BigDecimal max) {
-		this.max = max;
-	}
-	public BigDecimal getAverage() {
-		return average;
-	}
-	public void setAverage(BigDecimal average) {
-		this.average = average;
-	}
-	public BigDecimal getFirst() {
-		return first;
-	}
-	public void setFirst(BigDecimal first) {
-		this.first = first;
-	}
-	public BigDecimal getLast() {
-		return last;
-	}
-	public void setLast(BigDecimal last) {
-		this.last = last;
-	}
-	
+	private BigDecimal last;	
 	
 }

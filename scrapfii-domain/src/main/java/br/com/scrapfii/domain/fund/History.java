@@ -1,38 +1,31 @@
 package br.com.scrapfii.domain.fund;
 
-import static java.util.Collections.unmodifiableList;
+import static javax.persistence.GenerationType.SEQUENCE;
 
 import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode
 
 @Entity
-public abstract class History implements Serializable {
+public class History implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = SEQUENCE)
+	private Long id;
 	
-	private CNPJ cnpj;
-	@ManyToOne
+	@OneToMany
 	private List<Year> years;
 	
-	public String getCNPJ() {
-		return this.cnpj.getCPNJ();
-	}
-	
-	public void changeCNPJ(CNPJ cnpj) {
-		this.cnpj = cnpj;
-	}
-	
-	public List<Year> getYears() {
-		return unmodifiableList(years);
-	}
-	
-	public Year getYear(Integer yearNumber) {
-		return years.get(yearNumber);
-	}
-	
-	public void addYear(Year year) {
-		years.add(year);
-	}
 }
