@@ -1,27 +1,48 @@
 package br.com.scrapfii.domain.fund;
 
+import static java.util.Collections.unmodifiableList;
+import static javax.persistence.EnumType.STRING;
+import static javax.persistence.GenerationType.SEQUENCE;
+
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Month {
-	protected Integer monthNumber;
-	protected Integer year;
-	protected List<Day> days;
-	
-	
-	public Month(Integer monthNumber, Integer year) {
-		this.monthNumber = monthNumber;
-		this.year = year;
-	}
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
-	public void addDay(Day day) {
-		this.validateMonth(monthNumber, days, year);
-		this.days.add(day);
-	}
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-	protected abstract void validateMonth(Integer monthNumber, List<Day> days, Integer year);
+@Getter
+@Setter
+@EqualsAndHashCode
 
-	public Day getDay(Integer day) {
-		return this.days.get(day);
+@Entity
+public class Month implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = SEQUENCE)
+	private Long id;
+	
+	@OneToMany
+	private List<Day> days;
+	
+	@Enumerated(STRING)
+	private EnumMonth month;
+	
+	public Month(EnumMonth month) {
+		this.month = month;
 	}
 	
+	public List<Day> getDays() {
+		return unmodifiableList(days);
+	}
+	
+	public EnumMonth next() {
+		return this.month;
+	}
 }

@@ -1,20 +1,31 @@
 package br.com.scrapfii.domain.fund;
 
-import java.util.List;
+import static javax.persistence.GenerationType.SEQUENCE;
 
-public abstract class About {
+import java.io.Serializable;
 
-	protected CNPJ cnpj;
-	protected String name;
-	protected String site;
-	protected List<String> negociationCodes;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-	public About(CNPJ cnpj, String name, String site, List<String> negociationCodes) {
-		this.cnpj = cnpj;
-		this.name = name;
-		this.site = site;
-		this.negociationCodes = negociationCodes;
-	}
-	
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+
+@Entity
+public class About implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = SEQUENCE)
+	private Long id;
+
+	private CNPJ cnpj;
+	private String name;
+	private String site;
+	private String negociationCode;
 	
 }

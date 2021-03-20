@@ -1,48 +1,37 @@
 package br.com.scrapfii.application.builders.fund;
 
-import java.util.List;
-
-import br.com.scrapfii.application.fund.AboutImpl;
+import br.com.scrapfii.application.fund.AboutEntity;
+import br.com.scrapfii.application.fund.CnpjEntity;
 import br.com.scrapfii.domain.fund.About;
-import br.com.scrapfii.domain.fund.CNPJ;
 
 public class AboutBuilder {
-	private Long id;
-	private CNPJ cnpj;
-	private String name;
-	private String site;
-	private List<String> negociationCodes;
-	
+	private About about = new AboutEntity();
+
 	public static AboutBuilder builder() {
 		return new AboutBuilder();
 	}
-	
-	public AboutBuilder withId(Long id) {
-		this.id = id;
+
+	public AboutBuilder withCnpj(String cnpj) {
+		about.setCnpj(new CnpjEntity(cnpj));
 		return this;
 	}
-	
-	public AboutBuilder withCnpj(CNPJ cnpj) {
-		this.cnpj = cnpj;
-		return this;
-	}
-	
+
 	public AboutBuilder withName(String name) {
-		this.name = name;
+		about.setName(name);
 		return this;
 	}
 
 	public AboutBuilder withSite(String site) {
-		this.site = site;
+		about.setSite(site);
 		return this;
 	}
-	
-	public AboutBuilder withCodes(List<String> codes) {
-		this.negociationCodes = codes;
+
+	public AboutBuilder withCodes(String code) {
+		about.setNegociationCode(code);
 		return this;
 	}
-	
+
 	public About build() {
-		return new AboutImpl(id, cnpj, name, site, negociationCodes);
+		return about;
 	}
 }

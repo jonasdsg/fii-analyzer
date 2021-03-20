@@ -1,27 +1,34 @@
 package br.com.scrapfii.domain.fund;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public abstract class Day {
-	protected Integer dayNumber;
-	protected BigDecimal min;
-	protected BigDecimal max;
-	protected BigDecimal average;
-	protected BigDecimal first;
-	protected BigDecimal last;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+
+@Entity
+public class Day implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = SEQUENCE)
+	private Long id;
 	
-	public Day(Integer dayNumber, BigDecimal min, BigDecimal max, BigDecimal average, BigDecimal first,
-			BigDecimal last) {
-		this.validate(dayNumber, min, max, average, first, last);
-		
-		this.dayNumber = dayNumber;
-		this.min = min;
-		this.max = max;
-		this.average = average;
-		this.first = first;
-		this.last = last;
-	}
+	private Integer dayNumber;
+	private BigDecimal min;
+	private BigDecimal max;
+	private BigDecimal average;
+	private BigDecimal first;
+	private BigDecimal last;	
 	
-	protected abstract void validate(Integer dayNumber, BigDecimal min, BigDecimal max, BigDecimal average, BigDecimal first,
-			BigDecimal last);
 }

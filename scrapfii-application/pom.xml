@@ -7,18 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<dependencies>
-		<dependency>
-			<artifactId>scrapfii-services</artifactId>
-			<groupId>br.com.scrapfii.scrapfii-services</groupId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>br.com.scrapfii.scrapfii-shared</groupId>
-			<artifactId>scrapfii-shared</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+	<dependencies>	
 
 		<dependency>
 			<groupId>br.com.scrapfii.scrapfii-domain</groupId>

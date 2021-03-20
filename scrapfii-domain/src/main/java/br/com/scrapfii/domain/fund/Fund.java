@@ -1,18 +1,30 @@
 package br.com.scrapfii.domain.fund;
 
-public class Fund {
-	
-	protected CNPJ cnpj; 
-	protected About data;
-	protected Contact contact;
-	protected PriceHistory fundPricesHistory;
+import static javax.persistence.GenerationType.SEQUENCE;
 
-	public Fund(CNPJ cnpj, About data, Contact contact, PriceHistory fundPricesHistory) {
-		this.cnpj = cnpj;
-		this.data = data;
-		this.contact = contact;
-		this.fundPricesHistory = fundPricesHistory;
-	}
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+
+@Entity
+public class Fund implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = SEQUENCE)
+	private Long id;
 	
+	private About about;
+	private Contact contact;
+	private History history;
 	
 }
