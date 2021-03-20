@@ -1,7 +1,7 @@
 package br.com.scrapfii.shared.mappers;
 
+import br.com.scrapfii.domain.dto.HistoryDTO;
 import br.com.scrapfii.domain.fund.History;
-import br.com.scrapfii.shared.dto.HistoryDTO;
 
 public class HistoryMapper implements Mapper<History, HistoryDTO> {
 	private YearMapper yearMapper = new YearMapper();

@@ -1,8 +1,8 @@
 package br.com.scrapfii.shared.mappers;
 
+import br.com.scrapfii.domain.dto.AboutDTO;
 import br.com.scrapfii.domain.fund.About;
 import br.com.scrapfii.domain.fund.CNPJ;
-import br.com.scrapfii.shared.dto.AboutDTO;
 
 public class AboutMapper implements Mapper<About, AboutDTO> {
 

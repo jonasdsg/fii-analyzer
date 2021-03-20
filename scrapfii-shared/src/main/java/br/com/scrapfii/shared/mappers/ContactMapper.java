@@ -1,7 +1,7 @@
 package br.com.scrapfii.shared.mappers;
 
+import br.com.scrapfii.domain.dto.ContactDTO;
 import br.com.scrapfii.domain.fund.Contact;
-import br.com.scrapfii.shared.dto.ContactDTO;
 
 public class ContactMapper implements Mapper<Contact, ContactDTO> {
 

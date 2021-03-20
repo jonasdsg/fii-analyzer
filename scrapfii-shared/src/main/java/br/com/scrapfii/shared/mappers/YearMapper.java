@@ -1,7 +1,7 @@
 package br.com.scrapfii.shared.mappers;
 
+import br.com.scrapfii.domain.dto.YearDTO;
 import br.com.scrapfii.domain.fund.Year;
-import br.com.scrapfii.shared.dto.YearDTO;
 
 public class YearMapper implements Mapper<Year, YearDTO> {
 	private MonthMapper monthMapper = new MonthMapper();

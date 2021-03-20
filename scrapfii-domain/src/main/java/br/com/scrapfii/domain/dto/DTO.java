@@ -1,4 +1,4 @@
-package br.com.scrapfii.shared.dto;
+package br.com.scrapfii.domain.dto;
 
 public abstract class DTO {
 	

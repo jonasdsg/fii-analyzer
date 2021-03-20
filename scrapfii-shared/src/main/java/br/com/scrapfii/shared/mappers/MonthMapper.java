@@ -3,9 +3,9 @@ package br.com.scrapfii.shared.mappers;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.scrapfii.domain.dto.MonthDTO;
 import br.com.scrapfii.domain.fund.Day;
 import br.com.scrapfii.domain.fund.Month;
-import br.com.scrapfii.shared.dto.MonthDTO;
 
 public class MonthMapper implements Mapper<Month, MonthDTO> {
 	private DayMapper dayMapper = new DayMapper(); 

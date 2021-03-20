@@ -1,7 +1,7 @@
 package br.com.scrapfii.shared.mappers;
 
+import br.com.scrapfii.domain.dto.DayDTO;
 import br.com.scrapfii.domain.fund.Day;
-import br.com.scrapfii.shared.dto.DayDTO;
 
 public class DayMapper implements Mapper<Day, DayDTO> {
 

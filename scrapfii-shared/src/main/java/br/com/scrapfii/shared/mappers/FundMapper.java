@@ -1,7 +1,7 @@
 package br.com.scrapfii.shared.mappers;
 
+import br.com.scrapfii.domain.dto.FundDTO;
 import br.com.scrapfii.domain.fund.Fund;
-import br.com.scrapfii.shared.dto.FundDTO;
 
 public class FundMapper implements Mapper<Fund, FundDTO> {
 	private AboutMapper aboutMapper = new AboutMapper();

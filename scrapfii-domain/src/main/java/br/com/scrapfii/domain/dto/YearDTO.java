@@ -1,4 +1,4 @@
-package br.com.scrapfii.shared.dto;
+package br.com.scrapfii.domain.dto;
 
 import java.util.List;
 
