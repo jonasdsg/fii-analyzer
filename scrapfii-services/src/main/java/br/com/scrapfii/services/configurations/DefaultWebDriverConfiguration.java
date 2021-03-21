@@ -1,4 +1,4 @@
-package br.com.scrapfii.application.configuration;
+package br.com.scrapfii.services.configurations;
 
 import org.openqa.selenium.WebDriver;
 

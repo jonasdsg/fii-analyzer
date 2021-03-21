@@ -1,9 +1,9 @@
-package br.com.scrapfii.application.shared.pageObjects;
+package br.com.scrapfii.services.pageObjects;
 
 import static java.util.Objects.isNull;
 
-import br.com.scrapfii.application.configuration.ChromeDriverConfiguration;
-import br.com.scrapfii.application.configuration.DefaultWebDriverConfiguration;
+import br.com.scrapfii.services.configurations.ChromeDriverConfiguration;
+import br.com.scrapfii.services.configurations.DefaultWebDriverConfiguration;
 
 public abstract class PageObjectTest {
 	

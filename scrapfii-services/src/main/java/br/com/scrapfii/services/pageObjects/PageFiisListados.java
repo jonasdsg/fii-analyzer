@@ -1,4 +1,4 @@
-package br.com.scrapfii.application.shared.pageObjects;
+package br.com.scrapfii.services.pageObjects;
 import static org.openqa.selenium.By.tagName;
 import static org.openqa.selenium.By.xpath;
 
@@ -7,7 +7,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import br.com.scrapfii.application.configuration.DefaultWebDriverConfiguration;
+import br.com.scrapfii.services.configurations.DefaultWebDriverConfiguration;
 
 public class PageFiisListados extends PageObject{
 	
@@ -34,7 +34,7 @@ public class PageFiisListados extends PageObject{
 		this.browser.findElement(xpath(SEARCH_BUTTON)).click();
 		this.sleep(5);
 		this.browser.findElement(xpath(FIRST_CARD)).click();
-		return new PageFundDetail(this.getConfigs());
+		return new PageFundDetail(this.browser);
 	}
 
 	public WebElement nextPage() {
