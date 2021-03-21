@@ -1,9 +1,14 @@
-package br.com.scrapfii.application.shared.pageObjects;
+package br.com.scrapfii.services.pageObjects;
 
-import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import br.com.scrapfii.services.pageObjects.PageFiisListados;
+import br.com.scrapfii.services.pageObjects.PageFundDetail;
 
 public class PageFundDetailTest extends PageObjectTest {
 	private static PageFundDetail fundDetail;
@@ -13,18 +18,15 @@ public class PageFundDetailTest extends PageObjectTest {
 		PageFiisListados list = new PageFiisListados(getWebDriverConfig());
 		list.goToMainPage();
 		fundDetail =  list.searchFor("AFOF");
-				//new PageFundDetail(new ChromeDriverConfiguration());
 	}
 	
 	@BeforeEach
 	public void beforeEach() {
-	//	fundDetail.goToMainPage();
-		this.sleep(10);
+		this.sleep(2);
 	}
 	
-	@AfterEach
+	@AfterAll
 	public void afterEach() {
-		this.sleep(5);
 		fundDetail.close();
 	}
 	
@@ -33,5 +35,40 @@ public class PageFundDetailTest extends PageObjectTest {
 		fundDetail.getCards().stream().forEach(div->{
 			System.out.println(div.getText());
 		});
+	}
+	
+	@Test
+	public void getNameTest() {
+		assertNotNull(fundDetail.getName());
+	}
+	
+	@Test
+	public void getCnpjTest() {
+		assertNotNull(fundDetail.getCnpj());
+	}
+	
+	@Test
+	public void getAddressTest() {
+		assertNotNull(fundDetail.getAdress());
+	}
+	
+	@Test
+	public void getPhoneTest() {
+		assertNotNull(fundDetail.getPhone());
+	}
+	
+	@Test
+	public void getDepartmentTest() {
+		assertNotNull(fundDetail.getDepartment());
+	}
+	
+	@Test
+	public void getBookKeeperDataTest() {
+		assertNotNull(fundDetail.getBookKeeperData());
+	}
+	
+	@Test
+	public void getDirectorDataTest() {
+		assertNotNull(fundDetail.getDirectorData());
 	}
 }

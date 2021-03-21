@@ -1,4 +1,4 @@
-package br.com.scrapfii.application.shared.pageObjects;
+package br.com.scrapfii.services.pageObjects;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -6,6 +6,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import br.com.scrapfii.services.pageObjects.PageFiisListados;
 
 public class PageFiisListadosTest extends PageObjectTest {
 	private static PageFiisListados fiisListados;

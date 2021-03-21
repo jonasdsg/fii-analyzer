@@ -1,28 +1,26 @@
-package br.com.scrapfii.application.shared.pageObjects;
+package br.com.scrapfii.services.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import br.com.scrapfii.application.configuration.DefaultWebDriverConfiguration;
+import br.com.scrapfii.services.configurations.DefaultWebDriverConfiguration;
 
 public abstract class PageObject {
-	private DefaultWebDriverConfiguration configs;
+	private WebDriver driver;
 	
 	public PageObject(DefaultWebDriverConfiguration configs) {
-		this.configs = configs;
+		this.driver = configs.getDriver();
 	}
-	
+	public PageObject(WebDriver driver) {
+		this.driver = driver;
+	}
 	protected WebDriver getDriver() {
-		return this.configs.getDriver();
+		return this.driver;
 	}
 	
 	public abstract void goToMainPage();
 	
-	protected DefaultWebDriverConfiguration getConfigs() {
-		return this.configs;
-	}
-	
 	public void close() {
-		this.configs.getDriver().close();
+		this.driver.close();
 	}
 	
 	protected void sleep(Integer seconds) {
