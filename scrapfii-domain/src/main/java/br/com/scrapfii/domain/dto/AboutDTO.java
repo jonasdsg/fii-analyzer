@@ -6,5 +6,5 @@ public class AboutDTO extends DTO {
 	public String name;
 	public String site;
 	public String negociationCode;
-	
+	public String department;
 }

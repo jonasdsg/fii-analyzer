@@ -26,7 +26,7 @@ public class About implements Serializable {
 	private String name;
 	private String site;
 	private String negociationCode;
-	
+	private String department;
 	public About() {}
 	
 	public void setCnpj(CNPJ cnpj) {
